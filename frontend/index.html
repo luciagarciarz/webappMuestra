@@ -73,14 +73,14 @@
     <!--BUSCADOR DE INCIDENCIAS POR ID, DIRECCIÓN O DESCRIPCIÓN-->
                       <input id="buscador-incidencias" class="form-control form-control-sm flex-grow-1" type="search" placeholder="Buscar por número de incidencia" />
     <!--DESPLEGABLE DE ESTADOS-->
-                      <select class="form-select form-select-sm w-auto">
+                      <select id="filtro-estado" class="form-select form-select-sm w-auto">
                         <option>Todos los estados</option>
                         <option>Pendiente</option>
                         <option>En proceso</option>  
                         <option>Resuelto</option>                       
                       </select>
     <!--DESPLEGABLE DE PRIORIDADES-->
-                      <select class="form-select form-select-sm w-auto">
+                      <select id="filtro-prioridad" class="form-select form-select-sm w-auto">
                         <option>Todas las prioridades</option>
                         <option>Alta</option>
                         <option>Media</option>
@@ -109,7 +109,7 @@
                           <td>Av. Central, 12</td>
                           <td><span class="badge bg-danger">Alta</span></td>
                           <td><span class="badge bg-warning text-dark">Pendiente</span></td>
-                          <td>Equipo 1</td>
+                          <td>Rubén Martínez</td>
                           <td>18/06/2026</td>
                         </tr>
                         <tr>
@@ -118,7 +118,7 @@
                           <td>C/ Olmo, 7</td>
                           <td><span class="badge bg-warning">Media</span></td>
                           <td><span class="badge bg-info text-dark">En proceso</span></td>
-                          <td>Rosa M.</td>
+                          <td>Lucía García</td>
                           <td>17/06/2026</td>
                         </tr>
                         <tr>
@@ -127,7 +127,7 @@
                           <td>Plaza Mayor, 3</td>
                           <td><span class="badge bg-success">Baja</span></td>
                           <td><span class="badge bg-success">Resuelto</span></td>
-                          <td>Equipo 2</td>
+                          <td>Sergio Pérez</td>
                           <td>16/06/2026</td>
                         </tr>
                       </tbody>
