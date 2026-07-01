@@ -12,7 +12,7 @@
   <body>
     <div class="container-fluid bg-light min-vh-100">
       <div class="row gx-0">
-        <aside class="col-12 col-xl-3 col-xxl-2 p-4 bg-white border-end vh-100 position-fixed overflow-auto">
+        <aside class="col-12 col-xl-2 col-xxl-2 p-4 bg-white border-end vh-100 position-fixed overflow-auto">
           <div class="pb-3 border-bottom">
             <strong class="d-block fs-4">Municipal Admin</strong>
             <p class="text-muted small mb-0">Gestión de incidencias</p>
@@ -21,7 +21,7 @@
           <div class="mt-auto pt-4 border-top">
             <div class="d-flex align-items-center gap-3">
               <div>
-                <p class="small mb-0">Lucía García Ramírez</p>
+                <p class="small mb-0">Lidia Serrano</p>
                 <p class="small mb-0">ID 27644</p>              
             </div>
           </div>
@@ -29,7 +29,7 @@
 
 
 <!--COLUMNA PRINCIPAL-->
-        <main class="col offset-xl-3 offset-xxl-2 p-4"> 
+        <main class="col offset-xl-2 offset-xxl-2 p-4"> 
           <header class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
             <div>              
               <h1 class="h3 mb-0">PANEL DE GESTION</h1>
@@ -38,27 +38,19 @@
           </header>
     <!--SECCIÓN DE ESTADÍSTICAS-->
           <section class="row g-3 mb-4">
-            <article class="col-12 col-sm-6 col-lg-3">
+            <article class="col-12 col-lg-4">
               <div class="card shadow-sm h-100">
-                <div class="card-body">
+                <div class="card-body py-2">
                   <p class="text-uppercase text-muted small mb-2">Pendientes</p>
-                  <h2 class="mb-0">24</h2>
+                  <h2 class="h4 mb-0">24</h2>
                 </div>
               </div>
             </article>
-            <article class="col-12 col-sm-6 col-lg-3">
+            <article class="col-12 col-lg-4">
               <div class="card shadow-sm h-100">
-                <div class="card-body">
+                <div class="card-body py-2">
                   <p class="text-uppercase text-muted small mb-2">En proceso</p>
-                  <h2 class="mb-0">12</h2>
-                </div>
-              </div>
-            </article>
-            <article class="col-12 col-sm-6 col-lg-3">
-              <div class="card shadow-sm h-100">
-                <div class="card-body">
-                  <p class="text-uppercase text-muted small mb-2">Asignadas</p>
-                  <h2 class="mb-0">30</h2>
+                  <h2 class="h4 mb-0">12</h2>
                 </div>
               </div>
             </article>
@@ -72,6 +64,17 @@
                     <div class="d-flex flex-wrap gap-2 w-100">
     <!--BUSCADOR DE INCIDENCIAS POR ID, DIRECCIÓN O DESCRIPCIÓN-->
                       <input id="buscador-incidencias" class="form-control form-control-sm flex-grow-1" type="search" placeholder="Buscar por número de incidencia" />
+    <!--DESPLEGABLE DE TIPOS-->
+                      <select id="filtro-tipo" class="form-select form-select-sm w-auto">
+                        <option>Todos los tipos</option>
+                        <option>Alumbrado</option>
+                        <option>Limpieza</option>
+                        <option>Calzada</option>
+                        <option>Aceras</option>
+                        <option>Jardinería</option>
+                        <option>Señalización</option>
+                        <option>Otros</option>
+                      </select>
     <!--DESPLEGABLE DE ESTADOS-->
                       <select id="filtro-estado" class="form-select form-select-sm w-auto">
                         <option>Todos los estados</option>
@@ -94,6 +97,7 @@
                       <thead class="table-light small text-uppercase text-muted">
                         <tr>
                           <th>ID</th>
+                          <th>Título</th>
                           <th>Tipo</th>
                           <th>Dirección</th>
                           <th>Prioridad</th>
@@ -105,28 +109,31 @@
                       <tbody>
                         <tr>
                           <td>#1024</td>
+                          <td>Farola apagada</td>
                           <td>Alumbrado</td>
                           <td>Av. Central, 12</td>
-                          <td><span class="badge bg-danger">Alta</span></td>
+                          <td><span class="badge bg-danger text-dark">Alta</span></td>
                           <td><span class="badge bg-warning text-dark">Pendiente</span></td>
                           <td>Rubén Martínez</td>
                           <td>18/06/2026</td>
                         </tr>
                         <tr>
                           <td>#1018</td>
+                          <td>Contenedores sin recoger</td>
                           <td>Limpieza</td>
                           <td>C/ Olmo, 7</td>
-                          <td><span class="badge bg-warning">Media</span></td>
+                          <td><span class="badge bg-warning text-dark">Media</span></td>
                           <td><span class="badge bg-info text-dark">En proceso</span></td>
-                          <td>Lucía García</td>
+                          <td>Lidia Serrano</td>
                           <td>17/06/2026</td>
                         </tr>
                         <tr>
                           <td>#1005</td>
+                          <td>Bache en la Plaza Mayor</td>
                           <td>Calzada</td>
                           <td>Plaza Mayor, 3</td>
-                          <td><span class="badge bg-success">Baja</span></td>
-                          <td><span class="badge bg-success">Resuelto</span></td>
+                          <td><span class="badge bg-success text-dark">Baja</span></td>
+                          <td><span class="badge bg-success text-dark">Resuelto</span></td>
                           <td>Sergio Pérez</td>
                           <td>16/06/2026</td>
                         </tr>
@@ -144,16 +151,8 @@
                   <div class="d-flex align-items-start justify-content-between mb-4 flex-wrap gap-3">
                     <div>
                       <p class="text-uppercase text-secondary small mb-1">Detalle de incidencia</p>
-                      <h2 class="h5 mb-0">#1024 - Alumbrado apagado</h2>
+                      <h2 id="detalle-titulo" class="h5 mb-0">#1024 - Farola apagada</h2> <!--Se añade id para que JS pueda manipularlo (cambiar el título cada vez que se cambie de incidencia)-->
                     </div>
-                    <span class="badge bg-warning text-dark">Pendiente</span>
-                  </div>
-
-                  <div class="mb-4">
-                    <p class="mb-1"><strong>Dirección:</strong> Av. Central, 12</p>
-                    <p class="mb-1"><strong>Reportado:</strong> 18/06/2026 09:12</p>
-                    <p class="mb-1"><strong>Prioridad:</strong> Alta</p>
-                    <p class="mb-1"><strong>Asignado a:</strong> Sin asignar</p>
                   </div>
 
                   <div class="mb-4">
@@ -176,7 +175,6 @@
                   </div>
 
                   <div class="mt-auto d-grid gap-2">
-                    <button class="btn btn-primary">Asignar</button>
                     <button class="btn btn-outline-secondary">Marcar como resuelta</button>
                   </div>
                 </div>
